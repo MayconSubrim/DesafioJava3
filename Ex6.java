@@ -5,17 +5,22 @@ import java.util.Scanner;
 
 public class Ex6{
     public static void main(String[] args){
+        int acum = 0;
         Scanner read = new Scanner(System.in);
-        String resposta = "N"
+        String resposta = "S";
         do{
             System.out.println("Informe uma nota: ");
             double valor1 = read.nextDouble();
             System.out.println("Informe uma nota: ");
             double valor2 = read.nextDouble();
             System.out.println("A média é " + (valor1 + valor2)/2);
-            System.out.println("Quer continuar a calcular a media? ");
-            String resposta = read.nextLine();
+            System.out.println("Quer continuar a calcular a media? (S)/(N) ");
+            resposta = read.next();
+            if ((valor1+valor2)/2 >= 9.5){
+                acum++;
+            }
         }
-        while(resposta == "Sim");
+        while(resposta.equals("S"));
+        System.out.println("A quantidade de alunos aprovados e " + acum );
     }
 }
